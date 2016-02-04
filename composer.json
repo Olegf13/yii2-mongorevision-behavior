@@ -1,0 +1,32 @@
+{
+  "name": "olegf13/yii2-mongorevision-behavior",
+  "description": "MongoRevision behavior for Yii 2",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "extension",
+    "behavior",
+    "mongo",
+    "mongodb",
+    "revision",
+    "versioning",
+    "vcs"
+  ],
+  "homepage": "https://github.com/olegf13/yii2-mongorevision-behavior",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Oleg Fedorov",
+      "email": "olegf39@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*",
+    "yiisoft/yii2-mongodb": "~2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "olegf13\\mongorevision\\": ""
+    }
+  }
+}
