@@ -4,6 +4,7 @@ namespace olegf13\mongorevision;
 
 use yii\base\Behavior;
 use yii\db\BaseActiveRecord;
+use MongoDB\BSON\UTCDateTime;
 
 /**
  * MongoRevisionBehavior automatically makes revision of an ActiveRecord object when AR update event happens.
@@ -106,7 +107,7 @@ class MongoRevisionBehavior extends Behavior
 
         $attributes[$this->revisionOwnerIdAttribute] = $owner->primaryKey;
         $attributes[$this->revisionOwnerModelAttribute] = $owner->className();
-        $attributes[$this->revisionDateAttribute] = new \MongoDate();
+        $attributes[$this->revisionDateAttribute] = new UTCDateTime(round(microtime(true) * 1000));
 
         /** @var \yii\web\User $user */
         $attributes[$this->revisionUserAttribute] = (($user = \Yii::$app->get('user', false)) && !$user->isGuest) ? $user->id : null;
